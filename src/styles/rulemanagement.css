@@ -1,0 +1,11 @@
+.reg-dropdowns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* column-gap: 10px; */
+  justify-content: space-around;
+}
+
+.basic-single {
+  width: 30rem;
+}

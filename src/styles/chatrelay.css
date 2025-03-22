@@ -1,0 +1,26 @@
+.response-chat-container {
+  padding: 2rem 3rem 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  overflow-wrap: break-word;
+}
+
+.user-prompt-box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.user-icon-text,
+.bot-resp-head {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.5rem;
+}
+
+.bot-response-box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}

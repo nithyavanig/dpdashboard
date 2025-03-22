@@ -1,24 +1,35 @@
 import React from "react";
+import useStore from "../store/store";
 
 const Dashboard = () => {
+  const {
+    totalReports,
+    validationRules,
+    openIssues,
+    averageRiskScore,
+    // riskScoreTrends,
+    // issuesByType,
+    // dataQualityMetrics,
+    // regulatoryCoverage,
+  } = useStore();
   return (
     <div>
       <div className="summary-cards">
         <div className="card blue-card">
           <h3>Total Reports</h3>
-          <div className="value">7</div>
+          <div className="value">{totalReports}</div>
         </div>
         <div className="card green-card">
           <h3>Validation Rules</h3>
-          <div className="value">128</div>
+          <div className="value">{validationRules}</div>
         </div>
         <div className="card orange-card">
           <h3>Open Issues</h3>
-          <div className="value">23</div>
+          <div className="value">{openIssues}</div>
         </div>
         <div className="card purple-card">
           <h3>Average Risk Score</h3>
-          <div className="value">67%</div>
+          <div className="value">{averageRiskScore}</div>
         </div>
       </div>
 
