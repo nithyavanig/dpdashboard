@@ -1,5 +1,9 @@
 import React from "react";
 import useStore from "../store/store";
+import CoverageChart from "./charts/RegulatoryCoverageChart";
+import DataQualityChart from "./charts/DataQualityMetricsChart";
+import IssuesChart from "./charts/IssuesChart";
+import RiskScoreChart from "./charts/RiskScoreChart";
 
 const Dashboard = () => {
   const {
@@ -36,22 +40,30 @@ const Dashboard = () => {
       <div className="chart-container">
         <div className="chart">
           <h2>Risk Score Trends</h2>
-          <div className="placeholder-chart">Risk Score Chart</div>
+          <div className="placeholder-chart">
+            <RiskScoreChart />
+          </div>
         </div>
         <div className="chart">
           <h2>Issues by Type</h2>
-          <div className="placeholder-chart">Issues Chart</div>
+          <div className="placeholder-chart">
+            <IssuesChart />
+          </div>
         </div>
       </div>
 
       <div className="chart-container" style={{ marginTop: "20px" }}>
         <div className="chart">
           <h2>Data Quality Metrics</h2>
-          <div className="placeholder-chart">Data Quality Chart</div>
+          <div className="placeholder-chart">
+            <DataQualityChart />
+          </div>
         </div>
         <div className="chart">
           <h2>Regulatory Coverage</h2>
-          <div className="placeholder-chart">Coverage Chart</div>
+          <div className="placeholder-chart">
+            <CoverageChart />
+          </div>
         </div>
       </div>
     </div>
