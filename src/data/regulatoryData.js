@@ -75,30 +75,35 @@ export const mockRulesData = [
     rule_syntax:
       "COUNT(CASE WHEN {field_name} IS NULL THEN 1 ELSE NULL END) > 0",
     field_name: "customer_id",
+    chatHistory: [],
   },
   {
     id: 2,
     rule_name: "Unique Value Check",
     rule_syntax: "COUNT(DISTINCT {field_name}) = COUNT({field_name})",
     field_name: "email",
+    chatHistory: [],
   },
   {
     id: 3,
     rule_name: "Date Range Check",
     rule_syntax: "{field_name} BETWEEN '2023-01-01' AND '2023-12-31'",
     field_name: "order_date",
+    chatHistory: [],
   },
   {
     id: 4,
     rule_name: "String Length Check",
     rule_syntax: "LENGTH({field_name}) <= 50",
     field_name: "product_name",
+    chatHistory: [],
   },
   {
     id: 5,
     rule_name: "Numeric Range Check",
     rule_syntax: "{field_name} >= 0 AND {field_name} <= 1000",
     field_name: "quantity",
+    chatHistory: [],
   },
   {
     id: 6,
@@ -106,24 +111,28 @@ export const mockRulesData = [
     rule_syntax:
       "REGEXP_CONTAINS({field_name}, r'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$')",
     field_name: "email",
+    chatHistory: [],
   },
   {
     id: 7,
     rule_name: "Categorical Value Check",
     rule_syntax: "{field_name} IN ('Active', 'Inactive', 'Pending')",
     field_name: "status",
+    chatHistory: [],
   },
   {
     id: 8,
     rule_name: "Decimal Precision Check",
     rule_syntax: "CAST({field_name} AS DECIMAL(10, 2)) = {field_name}",
     field_name: "price",
+    chatHistory: [],
   },
   {
     id: 9,
     rule_name: "Negative Value Check",
     rule_syntax: "{field_name} >= 0",
     field_name: "sales_amount",
+    chatHistory: [],
   },
   {
     id: 10,
@@ -131,6 +140,7 @@ export const mockRulesData = [
     rule_syntax:
       "{field_name} = UPPER({field_name}) OR {field_name} = LOWER({field_name})",
     field_name: "country",
+    chatHistory: [],
   },
 ];
 

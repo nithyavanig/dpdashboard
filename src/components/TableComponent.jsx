@@ -10,6 +10,7 @@ import TableRow from "@mui/material/TableRow";
 import { Button } from "@mui/material";
 import useStore from "../store/store";
 import ChatAssistanceModal from "./ChatAssistanceModal";
+import { useState } from "react";
 
 const ruleColumns = [
   {
@@ -30,8 +31,9 @@ const ruleColumns = [
 const TableComponent = () => {
   const rulesData = useStore((state) => state.rulesData);
   const setOpenChatModal = useStore((state) => state.setOpenChatModal);
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [currentRuleId, setCurrentRuleId] = useState({});
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -46,6 +48,7 @@ const TableComponent = () => {
     //API call to refine rule
     console.log("refine rule: ", rowKey);
     setOpenChatModal(true);
+    setCurrentRuleId(rowKey);
     // updateRuleData(rowKey);
     // updateRowsAfterDeletion(rowKey);
   };
@@ -53,7 +56,7 @@ const TableComponent = () => {
   return (
     <>
       {/* <RefineModal /> */}
-      <ChatAssistanceModal />
+      <ChatAssistanceModal ruleId={currentRuleId} />
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">
