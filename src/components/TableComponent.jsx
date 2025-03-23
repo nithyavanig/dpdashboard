@@ -9,7 +9,7 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import { Button } from "@mui/material";
 import useStore from "../store/store";
-import { RefineModal } from "./RefineModal";
+import ChatAssistanceModal from "./ChatAssistanceModal";
 
 const ruleColumns = [
   {
@@ -44,7 +44,7 @@ const TableComponent = () => {
 
   const handleRefineRule = (rowKey) => {
     //API call to refine rule
-    console.log("Deleting rule with ID: ", rowKey);
+    console.log("refine rule: ", rowKey);
     setOpenChatModal(true);
     // updateRuleData(rowKey);
     // updateRowsAfterDeletion(rowKey);
@@ -52,7 +52,8 @@ const TableComponent = () => {
 
   return (
     <>
-      <RefineModal />
+      {/* <RefineModal /> */}
+      <ChatAssistanceModal />
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">

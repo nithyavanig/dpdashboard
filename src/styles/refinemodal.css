@@ -1,0 +1,7 @@
+.prompt-cont-area {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
