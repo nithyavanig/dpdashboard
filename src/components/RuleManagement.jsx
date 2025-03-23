@@ -25,6 +25,9 @@ const RuleManagement = () => {
   const ddstyles = { width: "20rem" };
   const handleCreateRules = () => {
     //API call to create rules
+    // axios.get('').then((response) => {
+
+    // }
     setLoading(true);
     console.log("Creating rules for: ", regType, regSubType);
     setRulesData(mockRulesData);

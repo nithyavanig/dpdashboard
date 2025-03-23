@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import useStore from "../store/store";
+import useStore from "../../store/store";
 
 const Sidebar = () => {
   const {
@@ -16,9 +16,9 @@ const Sidebar = () => {
     { id: "dashboard", label: "Dashboard" },
     { id: "datasources", label: "Data Sources" },
     { id: "rulemanagement", label: "Rule Management" },
-    { id: "issuetracking", label: "Issue Tracking" },
     { id: "reporting", label: "Reporting" },
-    { id: "settings", label: "Settings" },
+    { id: "issuetracking", label: "Issue Tracking" },
+    // { id: "settings", label: "Settings" },
   ];
 
   useEffect(() => {

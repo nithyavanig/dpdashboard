@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/sidebar/Sidebar";
 import Dashboard from "./components/Dashboard";
 import DataSources from "./components/DataSources";
 import RuleManagement from "./components/RuleManagement";

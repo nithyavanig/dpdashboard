@@ -40,6 +40,15 @@ const useStore = create((set) => ({
   // Chat Modal and Relay
   openChatModal: false,
   setOpenChatModal: (isOpen) => set({ openChatModal: isOpen }),
+  //Issue Tracking data
+  issuesTrackingData: [],
+  setIssuesTrackingData: (issuesTrackingData) => set({ issuesTrackingData }),
+  setRemediation: (issueId, remediation) =>
+    set((state) => ({
+      issuesTrackingData: state.issuesTrackingData.map((issue) =>
+        issue.id === issueId ? { ...issue, remediation } : issue
+      ),
+    })),
 }));
 
 export default useStore;

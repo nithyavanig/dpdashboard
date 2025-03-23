@@ -2,7 +2,7 @@ import React from "react";
 import { Modal, Box, IconButton, Typography } from "@mui/material";
 import useStore from "../store/store";
 import ChatRelay from "./ChatRelay";
-import Textarea from "./MUIComponents/TextArea";
+import Textarea from "./muicomponents/TextArea";
 import "../styles/refinemodal.css";
 import { FaCircleChevronRight, FaPlus } from "react-icons/fa6";
 import { MdClose } from "react-icons/md";
