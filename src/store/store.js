@@ -37,6 +37,38 @@ const useStore = create((set) => ({
         rule.id === updatedRule.id ? updatedRule : rule
       ),
     })),
+  addNewRule: (id, newRule) =>
+    set((state) => ({
+      rulesData: state.rulesData.map((rule) =>
+        rule.id === id
+          ? { ...rule, rule_name: [...rule.rule_name, newRule] }
+          : rule
+      ),
+    })),
+  updateRuleData: (id, newRule, index) =>
+    set((state) => ({
+      rulesData: state.rulesData.map((rule) =>
+        rule.id === id
+          ? {
+              ...rule,
+              rule_name: rule.rule_name.map((r, i) =>
+                i === index ? newRule : r
+              ),
+            }
+          : rule
+      ),
+    })),
+  removeRule: (id, index) =>
+    set((state) => ({
+      rulesData: state.rulesData.map((rule) => {
+        if (rule.id === id) {
+          const updatedRuleName = [...rule.rule_name]; // Create a shallow copy of the rule_name array
+          updatedRuleName.splice(index, 1); // Remove the item at the specified index
+          return { ...rule, rule_name: updatedRuleName }; // Return the updated rule
+        }
+        return rule; // Return the rule as is if the id doesn't match
+      }),
+    })),
   // Chat Modal and Relay
   openChatModal: false,
   setOpenChatModal: (isOpen) => set({ openChatModal: isOpen }),

@@ -11,19 +11,21 @@ import { Button } from "@mui/material";
 import useStore from "../store/store";
 import ChatAssistanceModal from "./ChatAssistanceModal";
 import { useState } from "react";
+import RulesModal from "./RulesRefineModal";
 
 const ruleColumns = [
   {
     id: "field_name",
     label: "Field Name",
-    minWidth: 170,
+    minWidth: 100,
   },
-  { id: "rule_name", label: "Name", minWidth: 170 },
-  { id: "rule_syntax", label: "Rule", minWidth: 200 },
+  { id: "rule_name", label: "Rule", minWidth: 350 },
+  // { id: "rule_name", label: "Name", minWidth: 170 },
+  { id: "rule_syntax", label: "Syntax", minWidth: 200 },
   {
     id: "action",
     label: "Action",
-    minWidth: 200,
+    minWidth: 100,
     align: "left",
   },
 ];
@@ -55,8 +57,8 @@ const TableComponent = () => {
 
   return (
     <>
-      {/* <RefineModal /> */}
-      <ChatAssistanceModal ruleId={currentRuleId} />
+      <RulesModal ruleId={currentRuleId} />
+      {/* <ChatAssistanceModal ruleId={currentRuleId} /> */}
       <Paper sx={{ width: "100%", overflow: "hidden" }}>
         <TableContainer sx={{ maxHeight: 440 }}>
           <Table stickyHeader aria-label="sticky table">
@@ -98,6 +100,19 @@ const TableComponent = () => {
                               >
                                 Refine
                               </Button>
+                            </TableCell>
+                          );
+                        } else if (column.id === "rule_name") {
+                          return (
+                            <TableCell key={column.id} align={column.align}>
+                              {value?.length <= 0
+                                ? "Not Available"
+                                : value.map((item, index) => (
+                                    <span key={index}>
+                                      {index + 1}) {item}
+                                      <br />
+                                    </span>
+                                  ))}
                             </TableCell>
                           );
                         } else {

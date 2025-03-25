@@ -184,12 +184,12 @@ body {
 }
 
 .rules-table {
-  padding-top: 3rem;
+  padding-top: 1rem;
 }
 
 .loading-icon-wrapper {
-  padding-top: 20vh;
-  padding-left: 30vw;
+  padding-top: 15vh;
+  padding-left: 20vw;
   svg {
     animation: animateSpin 2s infinite;
   }

@@ -9,3 +9,9 @@
 .basic-single {
   width: 30rem;
 }
+
+.input-data-container {
+  display: flex;
+  align-items: baseline;
+  column-gap: 1rem;
+}
