@@ -66,7 +66,7 @@ const RuleManagement = () => {
           if (value?.length > 0) {
             let valueData = [];
             value.forEach((rule) => {
-              valueData.push(rule.rule_name);
+              valueData.push(rule);
             });
             ruleData.push({
               id: "rule_" + key,

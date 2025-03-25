@@ -23,7 +23,7 @@ const RulesModal = ({ ruleId }) => {
   const setOpenChatModal = useStore((state) => state.setOpenChatModal);
   const rulesData = useStore((state) => state.rulesData);
   const fieldToRefineRules = rulesData.find((rule) => rule.id === ruleId);
-  const selectedField = fieldToRefineRules.field_name;
+  const selectedField = fieldToRefineRules?.field_name;
   const [editRuleNumber, setEditRuleNumber] = useState("");
 
   // Reset modal state
@@ -72,7 +72,7 @@ const RulesModal = ({ ruleId }) => {
     return (
       <Box sx={{ mt: 2 }}>
         <Typography variant="h6">Rules for {selectedField}</Typography>
-        {fieldToRefineRules.rule_name?.map((rule, index) => (
+        {fieldToRefineRules?.rule_name?.map((rule, index) => (
           <Typography key={index} variant="body2">
             {index + 1}. {rule}
             <br />
